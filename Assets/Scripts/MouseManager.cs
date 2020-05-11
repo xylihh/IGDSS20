@@ -2,58 +2,99 @@
 
 public class MouseManager : MonoBehaviour
 {
-    // Corners of rectangle surrounding Tiles
-    public Vector3 BottomLeft = new Vector3(-5, 0, -8);
-    public Vector3 BottomRight = new Vector3(5, 0, -8);
-    public Vector3 UpperLeft = new Vector3(-5, 0, 58);
-    public Vector3 UpperRight = new Vector3(5, 0, 58);
+    public Vector3 camStartPos = new Vector3(0, 80, -30);
+    public Quaternion camStartRot = Quaternion.Euler(60, 0, 0);
+    
+    // Camera pan settings
+    public float panSpeed = 10000f;
+    public Vector2 panLimitX = new Vector2(-40, 40);
+    public Vector2 panLimitZ = new Vector2(-120, 50);
+    
+    // Camera zoom settings
+    public float zoomSpeed = 10000f;
+    public float minFOV = 30f;
+    public float maxFOV = 90f;
 
-    // Mouse setups
-    public float mouseSensitivity = 10000.0f;
-    private Vector3 mouseStart;
+
+    // Variable initializations
+    private Vector3 mousePos;
+    private Vector3 offset;
 
     void Start()
     {
-        Camera.main.transform.position = new Vector3(0, 40, -30);
-        Quaternion camsetup = Quaternion.Euler(50, 0, 0);
-        Camera.main.transform.rotation = camsetup;
+        // Set Camera to a default position
+        Camera.main.transform.position = camStartPos;
+        Camera.main.transform.rotation = camStartRot;
+        Camera.main.fieldOfView = 60f;
     }
 
+    // Integrates three functions: giveTileName(), Pan(), Zoom()
     void Update()
     {   
-        if (Input.GetMouseButtonDown(1))
+        bool isLeftMouseDown = Input.GetMouseButtonDown(0);
+        if (isLeftMouseDown || Input.GetMouseButtonDown(1))
         {
-            mouseStart = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+            mousePos = Input.mousePosition;
+            if (isLeftMouseDown)
+            {
+                giveTileName();
+            }
         }
         else if (Input.GetMouseButton(1))
         {
-            Vector3 offset = Camera.main.ScreenToViewportPoint(Input.mousePosition) - mouseStart;
-            offset = mouseSensitivity * offset * Time.deltaTime;
-            Camera.main.transform.Translate(offset.x, 0, offset.y, Space.World);            
-            if(CheckBounds())
-            {
-                Camera.main.transform.Translate(-offset.x, 0, -offset.y, Space.World);
-            }
-            mouseStart = Camera.main.ScreenToViewportPoint(Input.mousePosition);            
-        }     
-//            Camera.main.transform.position = new Vector3
-//            (
-//                Mathf.Clamp(Camera.main.transform.position.x, leftLimit, rightLimit);
-//                Mathf.Clamp(transform.position.)
-//            );
+            Pan();
+        }
+        Zoom();
     }
 
-    bool CheckBounds()
+    // Camera panning on XZ-axis
+    void Pan()
     {
-        Debug.Log(Camera.main.WorldToViewportPoint(BottomRight).y);
-        return (Camera.main.WorldToViewportPoint(BottomLeft).x < 0 ||  
-                Camera.main.WorldToViewportPoint(BottomLeft).y < 0 ||
-                Camera.main.WorldToViewportPoint(BottomRight).x > 1 ||                
-                Camera.main.WorldToViewportPoint(BottomRight).y < 0 ||
-                Camera.main.WorldToViewportPoint(UpperLeft).x < 0 ||                
-                Camera.main.WorldToViewportPoint(UpperLeft).y > 1 ||
-                Camera.main.WorldToViewportPoint(UpperRight).x > 1 ||                
-                Camera.main.WorldToViewportPoint(UpperRight).y > 1
-        );
+        Vector3 mouseNewPos = Input.mousePosition;
+        Vector3 move = Camera.main.ScreenToViewportPoint(mousePos - mouseNewPos) *
+                panSpeed * Time.deltaTime;
+
+        Vector3 pos = Camera.main.transform.position;
+        // Move camera only within the boundaries of a terrain
+        pos.x = Mathf.Clamp(pos.x + move.x, panLimitX.x, panLimitX.y);
+        pos.z = Mathf.Clamp(pos.z + move.y, panLimitZ.x, panLimitZ.y);
+        Camera.main.transform.position = pos;
+            
+        mousePos = mouseNewPos;            
+    }
+
+    // Zooming by scrolling the mouse wheel
+    void Zoom()
+    {
+        float scrollWheelInput = Input.GetAxis("Mouse ScrollWheel");
+        
+        // Zooming within minimum and maximum zoom
+        Camera.main.fieldOfView = Mathf.Clamp(
+                Camera.main.fieldOfView + Time.deltaTime * zoomSpeed * scrollWheelInput,
+                minFOV,
+                maxFOV);
+    }
+
+    void giveTileName()
+    {
+        RaycastHit hit;
+        Ray selectObj = Camera.main.ScreenPointToRay(mousePos);
+        
+        // There are only two types of colliders: tiles and objects on tiles
+        if(Physics.Raycast(selectObj, out hit))
+        {
+            // If the tile is clicked (or a non colliding object on the tile)
+            // display tile name on console
+            if(hit.collider.tag == "Tile")
+            {
+                Debug.Log(hit.collider.name);
+            }
+            // Otherwise, a colliding object on a tile was hit. In this case,
+            // its parent's name will be displayed, which is the tile 
+            else
+            {
+                Debug.Log(hit.collider.transform.parent.name);
+            }
+        }
     }
 }
