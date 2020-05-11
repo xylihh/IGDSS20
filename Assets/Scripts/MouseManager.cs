@@ -70,7 +70,7 @@ public class MouseManager : MonoBehaviour
         
         // Zooming within minimum and maximum zoom
         Camera.main.fieldOfView = Mathf.Clamp(
-                Camera.main.fieldOfView + Time.deltaTime * zoomSpeed * scrollWheelInput,
+                Camera.main.fieldOfView - Time.deltaTime * zoomSpeed * scrollWheelInput,
                 minFOV,
                 maxFOV);
     }
