@@ -410,6 +410,57 @@ PrefabInstance:
       propertyPath: UpperRight.z
       value: 58
       objectReference: {fileID: 0}
+    - target: {fileID: 6290707436277161058, guid: b735b07b5305ea14b8bf7d621e209933,
+        type: 3}
+      propertyPath: heightmap
+      value: 
+      objectReference: {fileID: 2800000, guid: 6c8b8b5dee9104b429f737ec1d927ec9, type: 3}
+    - target: {fileID: 6290707436277161058, guid: b735b07b5305ea14b8bf7d621e209933,
+        type: 3}
+      propertyPath: Map
+      value: 
+      objectReference: {fileID: 1525255507}
+    - target: {fileID: 6290707436277161058, guid: b735b07b5305ea14b8bf7d621e209933,
+        type: 3}
+      propertyPath: sandPrefab
+      value: 
+      objectReference: {fileID: 1340986103100762413, guid: 67f6dd69eba94294db22a80f76a941c3,
+        type: 3}
+    - target: {fileID: 6290707436277161058, guid: b735b07b5305ea14b8bf7d621e209933,
+        type: 3}
+      propertyPath: forestPrefab
+      value: 
+      objectReference: {fileID: 3332388836446107968, guid: 24baf143037168247afc2405592c4a77,
+        type: 3}
+    - target: {fileID: 6290707436277161058, guid: b735b07b5305ea14b8bf7d621e209933,
+        type: 3}
+      propertyPath: grassPrefab
+      value: 
+      objectReference: {fileID: 6600319301909510717, guid: 55a8ea2f9434ee84a9d776db5e4bccbf,
+        type: 3}
+    - target: {fileID: 6290707436277161058, guid: b735b07b5305ea14b8bf7d621e209933,
+        type: 3}
+      propertyPath: waterPrefab
+      value: 
+      objectReference: {fileID: 273368710189886170, guid: 33edb9c451cd22f4aa8c5da26cf43bad,
+        type: 3}
+    - target: {fileID: 6290707436277161058, guid: b735b07b5305ea14b8bf7d621e209933,
+        type: 3}
+      propertyPath: stonePrefab
+      value: 
+      objectReference: {fileID: 1340986103100762413, guid: 67f6dd69eba94294db22a80f76a941c3,
+        type: 3}
+    - target: {fileID: 6290707436277161058, guid: b735b07b5305ea14b8bf7d621e209933,
+        type: 3}
+      propertyPath: mountainPrefab
+      value: 
+      objectReference: {fileID: 2362904809719359462, guid: 7e3450a334654f94b99025836a07d04e,
+        type: 3}
+    - target: {fileID: 6290707436277161058, guid: b735b07b5305ea14b8bf7d621e209933,
+        type: 3}
+      propertyPath: mouseMan
+      value: 
+      objectReference: {fileID: 1162097263}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b735b07b5305ea14b8bf7d621e209933, type: 3}
 --- !u!4 &1107625553 stripped
@@ -501,6 +552,48 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1162097263 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6290707436151856766, guid: b735b07b5305ea14b8bf7d621e209933,
+    type: 3}
+  m_PrefabInstance: {fileID: 757823823}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c4fb070738f3544ea560ef08186d72d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1525255506
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1525255507}
+  m_Layer: 0
+  m_Name: Map
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1525255507
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525255506}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1594822715 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3903756494121111060, guid: 24baf143037168247afc2405592c4a77,

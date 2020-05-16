@@ -7,8 +7,8 @@ public class MouseManager : MonoBehaviour
     
     // Camera pan settings
     public float panSpeed = 10000f;
-    public Vector2 panLimitX = new Vector2(-40, 40);
-    public Vector2 panLimitZ = new Vector2(-120, 50);
+    public Vector2 panLimitX = new Vector2(-50, 180);
+    public Vector2 panLimitZ = new Vector2(-250, 0);
     
     // Camera zoom settings
     public float zoomSpeed = 10000f;
