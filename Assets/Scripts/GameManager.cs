@@ -2,9 +2,8 @@
 
 public class GameManager : MonoBehaviour
 {
-    public MouseManager mouseMan;   // Initialize mouseManager to initialize settings according to generated Map
-    public Texture2D heightmap;         // heightmap is the height map, which we get from Textures/Assets
-    public Transform Map;               // Map is parent of all generated tiles
+    public Texture2D heightmap;                             // heightmap is the height map, which we get from Textures/Assets
+    public Transform Map;                                   // Map is parent of all generated tiles
 
     // Initialize tile prefabs
     public Object waterPrefab;
@@ -14,17 +13,17 @@ public class GameManager : MonoBehaviour
     public Object stonePrefab;
     public Object mountainPrefab;
 
-    // To rotate tile so it is more similar to the image shown in the exercise
-    private Quaternion fixRot = Quaternion.Euler(0, 90, 0);
+    private Quaternion fixRot = Quaternion.Euler(0, 90, 0); // To rotate tile so it is more similar to the image shown in the exercise
 
-    // Generates map
+    // Customizable options
+    public float tileHeightVar = 40f;
+    
     void Start()
     {
-        mouseMan.panLimitX = new Vector2(-50, 180);
-        mouseMan.panLimitZ = new Vector2(-250, 0);
         generateMap();
     }
 
+    // Generates map
     void generateMap()
     {
         float offset;
@@ -32,9 +31,9 @@ public class GameManager : MonoBehaviour
         {
             for (int j = 0; j < heightmap.height; j++)
             {
-
                 Color col = heightmap.GetPixel(i, j);
-                Object chosenPrefab = choosePrefab(col.maxColorComponent);
+                float tileHeight = col.maxColorComponent;
+                Object chosenPrefab = choosePrefab(tileHeight);
                 
                 if (j % 2 == 0)
                 {
@@ -46,9 +45,7 @@ public class GameManager : MonoBehaviour
                     offset = 5f;
                 }
                 
-
-
-                Instantiate(chosenPrefab, new Vector3(i * 10f + offset, 0, -j * 8f), fixRot, Map);
+                Instantiate(chosenPrefab, new Vector3(i * 10f + offset, tileHeight * tileHeightVar, -j * 8f), fixRot, Map);
             }
         }
     }
@@ -82,7 +79,7 @@ public class GameManager : MonoBehaviour
         
         else if(colVal > 0.8f && colVal <= 1f)
         {
-            return grassPrefab;
+            return mountainPrefab;
         }
 
         else

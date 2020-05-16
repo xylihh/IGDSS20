@@ -2,7 +2,7 @@
 
 public class MouseManager : MonoBehaviour
 {
-    public Vector3 camStartPos = new Vector3(0, 80, -30);
+    public Vector3 camStartPos = new Vector3(0, 110, -30);
     public Quaternion camStartRot = Quaternion.Euler(60, 0, 0);
     
     // Camera pan settings
@@ -12,8 +12,8 @@ public class MouseManager : MonoBehaviour
     
     // Camera zoom settings
     public float zoomSpeed = 10000f;
-    public float minFOV = 30f;
-    public float maxFOV = 90f;
+    public float minFOV = 20f;
+    public float maxFOV = 100f;
 
 
     // Variable initializations
