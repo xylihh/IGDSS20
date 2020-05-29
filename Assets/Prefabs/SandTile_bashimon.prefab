@@ -138,7 +138,7 @@ PrefabInstance:
     - target: {fileID: 6461190606886679958, guid: ff7ef13f88a71c94eb42898019398dcd,
         type: 3}
       propertyPath: m_Name
-      value: Sand Tile
+      value: SandTile_bashimon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff7ef13f88a71c94eb42898019398dcd, type: 3}

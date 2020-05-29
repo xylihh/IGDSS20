@@ -79,7 +79,7 @@ PrefabInstance:
     - target: {fileID: 5044814526144528268, guid: 476946919e1d5104fb4c93f1dc2db5e9,
         type: 3}
       propertyPath: m_Name
-      value: StoneTile
+      value: StoneTile_xyli
       objectReference: {fileID: 0}
     - target: {fileID: 6778234312165509336, guid: 476946919e1d5104fb4c93f1dc2db5e9,
         type: 3}

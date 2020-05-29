@@ -364,6 +364,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6290707436277161058, guid: b735b07b5305ea14b8bf7d621e209933,
         type: 3}
+      propertyPath: _tilePrefabs.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6290707436277161058, guid: b735b07b5305ea14b8bf7d621e209933,
+        type: 3}
       propertyPath: heightmap
       value: 
       objectReference: {fileID: 2800000, guid: 6c8b8b5dee9104b429f737ec1d927ec9, type: 3}
@@ -376,43 +381,79 @@ PrefabInstance:
         type: 3}
       propertyPath: sandPrefab
       value: 
-      objectReference: {fileID: 1340986103100762413, guid: 67f6dd69eba94294db22a80f76a941c3,
+      objectReference: {fileID: 1337996786382443626, guid: 67f6dd69eba94294db22a80f76a941c3,
         type: 3}
     - target: {fileID: 6290707436277161058, guid: b735b07b5305ea14b8bf7d621e209933,
         type: 3}
       propertyPath: forestPrefab
       value: 
-      objectReference: {fileID: 3332388836446107968, guid: 24baf143037168247afc2405592c4a77,
+      objectReference: {fileID: 3328902023573013511, guid: 24baf143037168247afc2405592c4a77,
         type: 3}
     - target: {fileID: 6290707436277161058, guid: b735b07b5305ea14b8bf7d621e209933,
         type: 3}
       propertyPath: grassPrefab
       value: 
-      objectReference: {fileID: 6600319301909510717, guid: 55a8ea2f9434ee84a9d776db5e4bccbf,
+      objectReference: {fileID: 6599088822670493562, guid: 55a8ea2f9434ee84a9d776db5e4bccbf,
         type: 3}
     - target: {fileID: 6290707436277161058, guid: b735b07b5305ea14b8bf7d621e209933,
         type: 3}
       propertyPath: waterPrefab
       value: 
-      objectReference: {fileID: 273368710189886170, guid: 33edb9c451cd22f4aa8c5da26cf43bad,
+      objectReference: {fileID: 272067940720695197, guid: 33edb9c451cd22f4aa8c5da26cf43bad,
         type: 3}
     - target: {fileID: 6290707436277161058, guid: b735b07b5305ea14b8bf7d621e209933,
         type: 3}
       propertyPath: stonePrefab
       value: 
-      objectReference: {fileID: 1340986103100762413, guid: 67f6dd69eba94294db22a80f76a941c3,
+      objectReference: {fileID: 880633228150943655, guid: a1bd896a5aefb9b429ddcf26660cd46a,
         type: 3}
     - target: {fileID: 6290707436277161058, guid: b735b07b5305ea14b8bf7d621e209933,
         type: 3}
       propertyPath: mountainPrefab
       value: 
-      objectReference: {fileID: 2362904809719359462, guid: 7e3450a334654f94b99025836a07d04e,
+      objectReference: {fileID: 2361889904756824737, guid: 7e3450a334654f94b99025836a07d04e,
         type: 3}
     - target: {fileID: 6290707436277161058, guid: b735b07b5305ea14b8bf7d621e209933,
         type: 3}
       propertyPath: mouseMan
       value: 
       objectReference: {fileID: 1162097263}
+    - target: {fileID: 6290707436277161058, guid: b735b07b5305ea14b8bf7d621e209933,
+        type: 3}
+      propertyPath: _tilePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 272067940720695197, guid: 33edb9c451cd22f4aa8c5da26cf43bad,
+        type: 3}
+    - target: {fileID: 6290707436277161058, guid: b735b07b5305ea14b8bf7d621e209933,
+        type: 3}
+      propertyPath: _tilePrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 1337996786382443626, guid: 67f6dd69eba94294db22a80f76a941c3,
+        type: 3}
+    - target: {fileID: 6290707436277161058, guid: b735b07b5305ea14b8bf7d621e209933,
+        type: 3}
+      propertyPath: _tilePrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 6599088822670493562, guid: 55a8ea2f9434ee84a9d776db5e4bccbf,
+        type: 3}
+    - target: {fileID: 6290707436277161058, guid: b735b07b5305ea14b8bf7d621e209933,
+        type: 3}
+      propertyPath: _tilePrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 3328902023573013511, guid: 24baf143037168247afc2405592c4a77,
+        type: 3}
+    - target: {fileID: 6290707436277161058, guid: b735b07b5305ea14b8bf7d621e209933,
+        type: 3}
+      propertyPath: _tilePrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 880633228150943655, guid: a1bd896a5aefb9b429ddcf26660cd46a,
+        type: 3}
+    - target: {fileID: 6290707436277161058, guid: b735b07b5305ea14b8bf7d621e209933,
+        type: 3}
+      propertyPath: _tilePrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 2361889904756824737, guid: 7e3450a334654f94b99025836a07d04e,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b735b07b5305ea14b8bf7d621e209933, type: 3}
 --- !u!1 &1150580614
